@@ -1,5 +1,5 @@
 // Your OpenWeatherMap API Key
-const API_KEY = '5837ddd28aeab2f1511f076cb614ef3b';  // Replace with your actual API key
+const API_KEY = '5837ddd28aeab2f1511f076cb614ef3bYOUR_API_KEY_HERE';  // Replace with your actual API key
 const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 // Function to fetch weather data
@@ -45,5 +45,13 @@ function displayWeather(data) {
     document.getElementById('weather-display').innerHTML = weatherHTML;
 }
 
-// Call the function when page loads
-getWeather('London');
+// Show welcome message on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const welcomeMessage = `
+        <div class="welcome-message">
+            <h2>Welcome to SkyFetch Weather Dashboard</h2>
+            <p>Search for a city to get the current weather information</p>
+        </div>
+    `;
+    document.getElementById('weather-display').innerHTML = welcomeMessage;
+});
