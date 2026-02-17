@@ -45,7 +45,7 @@ function displayWeather(data) {
     document.getElementById('weather-display').innerHTML = weatherHTML;
 }
 
-// Show welcome message on page load
+// Show welcome message on page load and set up search functionality
 document.addEventListener('DOMContentLoaded', function() {
     const welcomeMessage = `
         <div class="welcome-message">
@@ -54,4 +54,28 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
     document.getElementById('weather-display').innerHTML = welcomeMessage;
+    
+    // Get references to the search elements
+    const searchBtn = document.getElementById('search-btn');
+    const cityInput = document.getElementById('city-input');
+    
+    // Handle search button click
+    searchBtn.addEventListener('click', function() {
+        const city = cityInput.value.trim();
+        if (city) {
+            getWeather(city);
+            cityInput.value = ''; // Clear input after search
+        }
+    });
+    
+    // Handle Enter key press in input field
+    cityInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            const city = cityInput.value.trim();
+            if (city) {
+                getWeather(city);
+                cityInput.value = ''; // Clear input after search
+            }
+        }
+    });
 });

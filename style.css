@@ -36,6 +36,48 @@ h1 {
     font-size: 1rem;
 }
 
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+#city-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+#search-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+#search-btn:active {
+    transform: translateY(0);
+}
+
 #weather-display {
     margin-top: 30px;
 }
